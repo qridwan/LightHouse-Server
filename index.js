@@ -70,14 +70,14 @@ client.connect((err) => {
     });
   });
 
-  //deleting data from the database
-  //   app.delete("/deleteEvent/:id", (req, res) => {
-  //     console.log(req.params.id);
-  //     collection
-  //       .deleteOne({ _id: ObjectId(req.params.id) })
-  //       .then((result) => res.send(result.deletedCount>0))
-  //       .catch((err) =>console.log(err))
-  //   });
+  // deleting single book from DB
+    app.delete("/deleteBook/:id", (req, res) => {
+      console.log(req.params.id);
+      BookCollection
+        .deleteOne({ _id: ObjectId(req.params.id) })
+        .then((result) => res.send(result.deletedCount>0))
+        .catch((err) =>console.log(err))
+    });
 
   console.log("==SERVER READY==");
 });
