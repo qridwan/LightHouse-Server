@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 4000;
+const port = 4000;
 const ObjectId = require("mongodb").ObjectId;
 
 app.use(cors());
@@ -82,4 +82,4 @@ client.connect((err) => {
   console.log("==SERVER READY==");
 });
 
-app.listen(port);
+app.listen(process.env.PORT || port);
